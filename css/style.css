@@ -1,0 +1,177 @@
+/* Styles extracted from index.html: primary site styles and step layout */
+:root{--bg:#f4f7f6;--card:#ffffff;--accent:#28a745;--accent-warm:#ff7a00;--danger:#d9534f;--muted:#6b7280}
+body{font-family:Inter,Segoe UI,Arial,Helvetica,sans-serif;background:var(--bg);margin:0;padding:28px;display:flex;align-items:center;justify-content:center;min-height:100vh}
+.container{width:100%;max-width:1200px}
+.card{background:var(--card);border-radius:12px;padding:28px 32px 34px;box-shadow:0 12px 32px rgba(11,20,40,0.08)}
+h1{margin:0 0 6px;font-size:24px;color:#0f172a}
+p.lead{margin:0 0 14px;color:var(--muted)}
+label{display:block;font-size:13px;margin-bottom:6px;color:#111827}
+input[type=text],input[type=email],input[type=tel]{width:100%;padding:12px 14px;border:1px solid #e6eef3;border-radius:10px;font-size:15px;box-sizing:border-box;background:#fbfdff}
+.field{margin-bottom:14px}
+.actions{display:flex;gap:10px;align-items:center;margin-top:8px;justify-content:center}
+button.primary{background:linear-gradient(90deg,var(--accent),#16a34a);color:#fff;border:none;padding:12px 16px;border-radius:10px;font-weight:700;cursor:pointer;box-shadow:0 6px 18px rgba(40,167,69,0.12)}
+button.secondary{background:transparent;border:1px solid #e6eef3;color:var(--accent-warm);padding:10px 14px;border-radius:10px;cursor:pointer}
+.error{color:var(--danger);font-size:13px;margin-top:6px}
+
+/* Step layout */
+.steps .step{display:none;opacity:0;transform:translateY(6px);transition:all .36s ease}
+.steps .step.active{display:block;opacity:1;transform:none}
+
+.product-row{display:flex;gap:20px;align-items:center;margin:16px 0;padding:16px;background:#fff;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.04);border:1px solid rgba(0,0,0,0.03);justify-content:flex-start}
+.product-thumb{width:96px;height:96px;border-radius:12px;overflow:hidden;background:#f8fafc;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.product-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.product-info{flex:1;min-width:0;text-align:left}
+.product-name{font-weight:700;font-size:20px;color:#0f172a;margin-bottom:6px;line-height:1.18}
+.product-price{font-size:22px;color:#16a34a;font-weight:800;margin-bottom:8px}
+
+/* Ajustes responsivos para o produto */
+@media (max-width:768px) {
+  .product-row{padding:12px;gap:12px}
+  .product-thumb{width:80px;height:80px}
+  .product-name{font-size:18px}
+  .product-price{font-size:20px}
+}
+
+@media (max-width:480px) {
+  .product-row{gap:12px;align-items:center}
+  .product-thumb{width:64px;height:64px}
+  .product-name{font-size:16px;margin-bottom:4px}
+  .product-price{font-size:18px}
+  .product-info{text-align:left}
+}
+
+/* Step 2 / 3 styles */
+.payment-option{border:1px solid #eef3f8;padding:12px;border-radius:10px;display:flex;align-items:center;gap:12px}
+.ref-box{display:flex;flex-direction:column;gap:10px;align-items:center}
+.readonly-field{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef3;background:#fbfdff}
+.copyBtn{background:transparent;border:1px solid #e6eef3;color:var(--accent-warm);padding:8px 10px;border-radius:8px;cursor:pointer}
+
+.details{background:rgba(6,78,59,0.03);padding:12px;border-radius:8px;margin-top:8px;color:#063022}
+
+.logo{width:140px;height:auto;display:block;margin:14px auto 0}
+
+/* Payment box styles for step1 */
+.payment-methods{margin-top:18px;border-top:1px dashed #e6eef3;padding-top:12px}
+.payment-box{border:1px solid #eef3f8;padding:12px;border-radius:10px;background:#fff;display:flex;flex-direction:column;gap:8px}
+.payment-box label{display:flex;align-items:center;gap:10px;font-size:15px;margin:0}
+.payment-desc{font-size:13px;color:var(--muted);margin-left:28px}
+
+/* Step 3 header styling */
+#step3 h2{
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 20px 0;
+  letter-spacing: -0.01em;
+}
+
+/* small document icon next to payment label */
+.doc-icon{width:18px;height:18px;flex:0 0 18px;color:var(--accent);}
+
+@media (max-width:1024px){
+  body{padding:20px}
+  .container{padding:0 15px}
+  .card{padding:24px 28px 30px}
+}
+
+@media (max-width:768px){
+  body{padding:15px}
+  .card{padding:20px 24px 26px}
+  .product-row{gap:12px}
+  .product-thumb{width:90px;height:90px}
+}
+
+@media (max-width:480px){
+  body{padding:10px}
+  .container{padding:0 10px}
+  .card{padding:16px 20px 22px}
+  /* keep product row horizontal on small phones as in design */
+  .product-row{flex-direction:row;align-items:center;gap:12px;padding:12px}
+  .product-thumb{width:64px;height:64px;margin:0}
+  .product-info{text-align:left}
+  .product-name{font-size:16px}
+  .product-price{font-size:18px}
+  .actions{flex-direction:column;width:100%}
+  .actions button{width:100%}
+
+  /* Ajustes para campos de formulário em telas pequenas */
+  input[type=text],
+  input[type=email],
+  input[type=tel]{
+    padding:10px 12px;
+    font-size:14px;
+  }
+  
+  /* Ajuste para os campos de referência */
+  .ref-box{
+    padding:0 10px;
+  }
+  .ref-box > div{
+    width:100% !important;
+  }
+}
+
+/* Button spinner */
+.spinner{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,0.8);border-top-color:rgba(255,255,255,0.2);border-radius:50%;animation:spin 1s linear infinite;vertical-align:middle;margin-right:8px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.primary[disabled]{opacity:0.7;cursor:default}
+
+/* Toast notifications (bottom-left) */
+.toast-wrap{position:fixed;left:18px;bottom:18px;display:none !important;flex-direction:column;gap:10px;z-index:9999}
+.toast{background:linear-gradient(90deg,#10b981,#059669);color:#fff;padding:10px 14px;border-radius:10px;box-shadow:0 10px 30px rgba(6,95,70,0.18);font-size:13px;display:inline-flex;align-items:center;gap:10px;opacity:0;transform:translateX(-18px);animation:toast-in .36s forwards}
+.toast.small{font-size:12px;padding:8px 12px}
+.toast svg{width:18px;height:18px;flex:0 0 18px}
+.toast .toast-body{display:flex;flex-direction:column;align-items:flex-start}
+.toast .toast-name{font-weight:800;font-size:13px;line-height:1;text-transform:uppercase}
+.toast .toast-sub{font-size:12px;opacity:0.95;margin-top:4px;text-transform:uppercase}
+@keyframes toast-in{to{opacity:1;transform:none}}
+.toast.hide{animation:toast-out .4s forwards}
+@keyframes toast-out{to{opacity:0;transform:translateX(-12px);height:0;margin:0;padding:0}}
+
+/* Global paid button (bottom center) */
+.paid-primary{background:linear-gradient(90deg,#16a34a,#059669);color:#fff;border:none;padding:12px 18px;border-radius:12px;font-weight:800;cursor:pointer;box-shadow:0 8px 24px rgba(5,150,105,0.16);display:inline-block}
+.paid-primary:disabled{opacity:0.7;cursor:default}
+
+.whatsapp-link{display:inline-block;margin-top:10px;background:#25D366;color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+.whatsapp-link:hover{filter:brightness(0.95)}
+
+/* Reference overlay (fixed, above everything) */
+.ref-overlay{width:220px;max-width:80%;height:auto;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.12);display:block;margin:0 auto}
+
+@media (max-width:480px){
+  .ref-overlay{width:140px}
+}
+
+/* Admin panel specific styles */
+.admin-layout{display:flex;gap:18px}
+.sidebar{width:220px;background:#0f172a;color:#fff;border-radius:12px;padding:18px;flex-shrink:0}
+.sidebar .brand{font-size:20px;font-weight:800;margin-bottom:14px}
+.sidebar nav{display:flex;flex-direction:column;gap:8px}
+.sidebar .nav-btn{background:transparent;border:none;color:rgba(255,255,255,0.9);text-align:left;padding:10px;border-radius:8px;cursor:pointer}
+.sidebar .nav-btn:hover{background:rgba(255,255,255,0.04)}
+.main{flex:1}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.topbar h1{margin:0;font-size:18px}
+.stat-summary{font-weight:700;color:var(--muted)}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.stat-card{padding:18px;text-align:center}
+.product-card{padding:12px;display:flex;align-items:center;justify-content:space-between}
+.prod-row{display:flex;align-items:center;gap:12px;width:100%}
+.prod-thumb{width:64px;height:64px;object-fit:cover;border-radius:8px}
+.prod-info{flex:1}
+.prod-name{font-weight:700}
+.prod-price{color:var(--muted)}
+.prod-actions{display:flex;gap:8px}
+.hidden{display:none}
+.view{display:none}
+.view.active{display:block}
+.clean-table{width:100%;border-collapse:collapse}
+.clean-table th,.clean-table td{padding:10px;border-bottom:1px solid #eef3f8;text-align:left}
+.table-card{padding:12px}
+.auth-card{max-width:420px;margin:14px auto}
+.modal{position:fixed;left:0;top:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;background:rgba(2,6,23,0.5);z-index:9999}
+.modal[aria-hidden="true"]{display:none}
+.modal-body{width:100%;max-width:720px}
+

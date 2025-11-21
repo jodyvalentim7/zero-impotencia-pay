@@ -1,0 +1,156 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+	<!-- Meta Pixel base -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  
+  fbq('init', '1078043377128435');
+  fbq('consent', 'grant'); 
+  fbq('track', 'PageView');
+</script>
+
+<!-- Evento InitiateCheckout automática ao carregar -->
+<script>
+  fbq('track', 'InitiateCheckout', {
+    value: 0,
+    currency: 'USD',
+    content_type: 'product'
+  });
+</script>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>Finalizar compra</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="card" role="application" aria-labelledby="form-title">
+				<div class="steps">
+					<!-- STEP 1 -->
+					<div id="step1" class="step active">
+						<!-- Banner space - only shows in step 1 -->
+						<div style="width:100%; margin-bottom:20px; text-align:center;">
+							<img id="bannerImg" src="images/banner2.png" alt="Banner" style="width:100%; max-width:100%; height:auto;" loading="lazy">
+						</div>
+						<h1 id="form-title">Finalizar compra</h1>
+						<p class="lead">Preencha seus dados e escolha o método de pagamento.</p>
+						<div class="product-row">
+							<div class="product-thumb" style="align-self:flex-start">
+								<img id="productThumbImg" src="images/banana2.png" alt="Miniatura do produto" style="width:100%;height:100%;object-fit:cover;object-position:left" loading="lazy">
+							</div>
+							<div class="product-info" style="text-align:left">
+								<div class="product-name">Programa Zero Impotência</div>
+								<div class="product-price">Kz 9.500</div>
+								<div style="display:flex;align-items:center;gap:6px">
+									<svg viewBox="0 0 24 24" style="width:16px;height:16px;color:#16a34a">
+										<path fill="currentColor" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+									</svg>
+									<span style="font-size:13px;color:#16a34a;font-weight:500">Pagamento Seguro</span>
+								</div>
+							</div>
+						</div>
+
+						<form id="checkoutForm" novalidate="">
+							<div class="field">
+								<label for="name">Nome completo</label>
+								<input type="text" id="name" name="name" placeholder="Seu nome" required="">
+								<div id="nameError" class="error" aria-live="polite" style="display:none"></div>
+							</div>
+
+							<div class="field">
+								<label for="email">E‑mail</label>
+								<input type="email" id="email" name="email" placeholder="seu@exemplo.com" required="">
+								<div id="emailError" class="error" aria-live="polite" style="display:none"></div>
+							</div>
+
+							<div class="field">
+								<label for="phone">Telefone (Angola)</label>
+								<input type="tel" id="phone" name="phone" placeholder="925 000 000" inputmode="tel" required="">
+								<div id="phoneError" class="error" aria-live="polite" style="display:none"></div>
+							</div>
+
+							<!-- Payment methods inside step1 -->
+							<div class="payment-methods">
+								<div style="font-weight:600;margin-bottom:8px">Método de pagamento</div>
+								<div class="payment-box">
+									<label>
+										<input type="checkbox" id="paymentRefCheckbox">
+										<svg class="doc-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM13 3.5L18.5 9H13V3.5zM8 13h8v2H8v-2zm0 4h8v2H8v-2z" fill="currentColor"></path></svg>
+										<span>Pagamento por Referência</span>
+									</label>
+									<div class="payment-desc">referência bancária para pagamento</div>
+								</div>
+								<div id="paymentError" class="error" style="display:none;margin-top:8px" aria-live="polite"></div>
+							</div>
+
+							<div class="actions">
+								<button type="submit" class="primary">Finalizar compra</button>
+							</div>
+						</form>
+					</div>
+
+
+
+					<!-- STEP 3 -->
+					<div id="step3" class="step" aria-hidden="true">
+						<div style="text-align:center;margin-bottom:8px">
+							<img id="refOverlay" class="ref-overlay" src="images/referencia.png" alt="Imagem de referência">
+						</div>
+						<h2>Pagamento por Referência</h2>
+						<p style="color:var(--muted);margin-bottom:8px">OBS: COPIE OS DADOS À BAIXO E FAÇA O PAGAMENTO NO SU MULTICAIXA EXPRESS, BAI DIRETO OU EM UM ATM. </p>
+
+						<div class="ref-box">
+							<div style="width:100%;max-width:520px">
+								<label>Entidade</label>
+								<div style="display:flex;gap:8px;align-items:center">
+									<input id="entidade" readonly="" class="readonly-field">
+									<button class="copyBtn" data-copy-target="entidade">Copiar</button>
+								</div>
+							</div>
+
+							<div style="width:100%;max-width:520px">
+								<label>Referência</label>
+								<div style="display:flex;gap:8px;align-items:center">
+									<input id="referencia" readonly="" class="readonly-field">
+									<button class="copyBtn" data-copy-target="referencia">Copiar</button>
+								</div>
+							</div>
+
+							<div style="width:100%;max-width:520px">
+								<label>Valor</label>
+								<div style="display:flex;gap:8px;align-items:center">
+									<input id="valorRef" readonly="" class="readonly-field">
+									<button class="copyBtn" data-copy-target="valorRef">Copiar</button>
+								</div>
+							</div>
+							<div style="margin-top:12px;text-align:center">
+								<div style="margin-bottom:8px;color:var(--muted);font-size:13px">Somente aperte depois de realizar o pagamento</div>
+								<a id="paidBtn" class="paid-primary whatsapp-link" href="https://wa.me/244949984032?text=VENHO%20CONFIRMAR%20O%20MEU%20PAGAMENTO%20DO%20PRODUTO.%0AESTOU%20ENVIANDO%20AGORA%20O%20COMPROVATIVO%20DO%20PAGAMENTO%20FEITO.%0AOBRIGADO!" target="_blank" rel="noopener noreferrer">Já paguei</a>
+							</div>
+
+							<div style="margin-top:12px;text-align:center;color:var(--muted)">O PRODUTO SERÁ ENVIADO PARA</div>
+							<div class="details" style="margin-top:8px;text-align:center;max-width:520px;margin-left:auto;margin-right:auto">
+								<div id="summaryNome"></div>
+								<div id="summaryEmail"></div>
+								<div id="summaryPhone"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/checkout.js" defer=""></script>
+		<!-- Toast container -->
+		<div class="toast-wrap" aria-live="polite" aria-atomic="true"></div>
+
+	
+
+</body></html>
