@@ -66,6 +66,10 @@ button.secondary{background:transparent;border:1px solid #e6eef3;color:var(--acc
   letter-spacing: -0.01em;
 }
 
+/* Attention paragraph: centered; uppercase tokens green */
+.attention{ text-align:center; color:var(--muted); margin-bottom:8px }
+.attention .caps{ color:var(--accent); font-weight:700; text-transform:uppercase }
+
 /* small document icon next to payment label */
 .doc-icon{width:18px;height:18px;flex:0 0 18px;color:var(--accent);}
 
